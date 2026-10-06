@@ -12,11 +12,13 @@ install_dms() {
     systemctl enable --user dsearch dms
     systemctl start --user dsearch dms
 }
+
 rm_dms() {
     systemctl stop --user dsearch dms
     systemctl disable --user dsearch dms
     systemctl mask --user dsearch dms
 }
+
 dms_keybinds() {
     BINDS_FILE="$HOME/.config/niri/dms/binds.kdl"
     BINDS_BACKUP="$HOME/.config/niri/dms/binds.kdl.backup"
@@ -35,15 +37,21 @@ check_noctalia() {
         fi
     fi
 }
+
 install_noctalia() {
     if [[ $INSTALL_NOCTALIA ]]; then
         sudo rum install noctalia -y
     fi
+    touch "$HOME/.config/rakuos/disable-tray"
     printf '\nspawn-at-startup "noctalia"\n' >> ~/.config/niri/config.kdl
     noctalia --daemon
+    noctalia msg plugins source add rum-updates git https://github.com/etrigan63/rum-updates
+    noctalia msg plugins enable etrigan63/rum-updates
 }
+
 rm_noctalia() {
     sed -i '/spawn-at-startup "noctalia"/d' ~/.config/niri/config.kdl
+    rm "$HOME/.config/rakuos/disable-tray"
     killall noctalia
     if ! id -nG "$USER" | grep -qw "wheel"; then
         LEFT_NOCTALIA=true
@@ -53,6 +61,7 @@ rm_noctalia() {
         fi
     fi
 }
+
 noctalia_keybinds() {
     BINDS_FILE="$HOME/.config/niri/dms/binds.kdl"
     BINDS_BACKUP="$HOME/.config/niri/dms/binds.kdl.backup"
