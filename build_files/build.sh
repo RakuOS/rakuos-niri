@@ -60,7 +60,7 @@ rum install -y --skip-broken --skip-unavailable \
   blueman \
   gnome-keyring \
   gnome-keyring-pam \
-  xwayland-satellite-0:0.8.1-1.fc44 \
+  xwayland-satellite-0:0.8.1-1.fc45 \
   NetworkManager-adsl \
   NetworkManager-bluetooth \
   NetworkManager-ppp \
