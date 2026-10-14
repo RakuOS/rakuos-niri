@@ -12,6 +12,7 @@ include "dms/cursor.kdl"
 include optional=true "windowrules.kdl"
 include optional=true "touchscreen.kdl"
 include optional=true "workspaces.kdl"
+include optional=true "user.kdl"
 
 environment {
     TERMINAL "ghostty"
