@@ -20,6 +20,10 @@ environment {
 prefer-no-csd
 screenshot-path "~/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+config-notification {
+    disable-failed
+}
+
 gestures {
 }
 
