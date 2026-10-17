@@ -21,10 +21,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-config-notification {
-    disable-failed
-}
-
 layer-rule {
     // match namespace="^quickshell$"
     match namespace="dms:blurwallpaper"

@@ -12,6 +12,7 @@ include "dms/cursor.kdl"
 include optional=true "windowrules.kdl"
 include optional=true "touchscreen.kdl"
 include optional=true "workspaces.kdl"
+include optional=true "user.kdl"
 
 environment {
     TERMINAL "ghostty"
@@ -19,6 +20,10 @@ environment {
 
 prefer-no-csd
 screenshot-path "~/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+config-notification {
+    disable-failed
+}
 
 gestures {
 }
