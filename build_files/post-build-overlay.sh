@@ -150,7 +150,7 @@ cat >> /usr/share/rakuos/protected-packages.txt << 'EOF'
   blueman
   gnome-keyring
   gnome-keyring-pam
-  xwayland-satellite
+  xorg-x11-server-Xwayland
   NetworkManager-adsl
   NetworkManager-bluetooth
   NetworkManager-ppp
