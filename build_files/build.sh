@@ -22,7 +22,6 @@ rum config-manager --default --set-enabled $(cat /usr/share/rakuos/rpmfusion-def
 
 ## Install packages
 # FIXME: Remove quickshell-git when Fedora gets 0.3 version
-# FIXME: Swap back to xwayland-satellite when they fix steam issue
 # ghostty-kio satisfies ghostty's rich Requires (`ghostty-kio = ... if
 # kf6-kio-core`); without it baked in now, any later kf6-kio-core install
 # (e.g. kde-partitionmanager) fails once Terra is disabled below.
@@ -61,7 +60,7 @@ rum install -y --skip-broken --skip-unavailable \
   blueman \
   gnome-keyring \
   gnome-keyring-pam \
-  xorg-x11-server-Xwayland \
+  xwayland-satellite \
   NetworkManager-adsl \
   NetworkManager-bluetooth \
   NetworkManager-ppp \
@@ -82,7 +81,7 @@ rum install -y --skip-broken --skip-unavailable \
   xdg-desktop-portal-gtk \
   xdg-user-dirs-gtk
 
-rum remove -y waybar swaylock alacritty fuzzel xwayland-satellite
+rum remove -y waybar swaylock alacritty fuzzel
 
 ## Remove fedora wallpapers
 #rm -r /usr/share/backgrounds/fedora-workstation/
