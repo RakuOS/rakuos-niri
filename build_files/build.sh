@@ -82,7 +82,7 @@ rum install -y --skip-broken --skip-unavailable \
   xdg-desktop-portal-gtk \
   xdg-user-dirs-gtk
 
-rum remove -y waybar swaylock alacritty fuzzel
+rum remove -y waybar swaylock alacritty fuzzel xwayland-satellite
 
 ## Remove fedora wallpapers
 #rm -r /usr/share/backgrounds/fedora-workstation/
