@@ -5,7 +5,7 @@ shift
 
 case "$COMMAND" in
     "shell")
-        /usr/libexec/rakuos-niri-shell "$@"
+        /usr/bin/rakuos-shell-picker
         ;;
     "greeter"):
         /usr/libexec/rakuos-niri-greeter "$@"

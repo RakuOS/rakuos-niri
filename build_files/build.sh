@@ -72,6 +72,7 @@ rum install -y --skip-broken --skip-unavailable \
   rakuos-software-gtk \
   rakuos-system-gtk \
   rakuos-welcome-gtk \
+  rakuos-shell-picker \
   systemd-oomd-defaults \
   wireplumber \
   xdg-desktop-portal \
