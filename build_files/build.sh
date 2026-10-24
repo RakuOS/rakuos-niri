@@ -57,7 +57,6 @@ rum install -y --skip-broken --skip-unavailable \
   qt6ct-kde \
   wl-mirror \
   libnotify \
-  blueman \
   xwayland-satellite \
   NetworkManager-adsl \
   NetworkManager-bluetooth \
