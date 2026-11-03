@@ -1,8 +1,8 @@
 {
-  "wallpaperPath": "/usr/share/backgrounds/rakuos/RakuOS-Glitch2.png",
+  "wallpaperPath": "/usr/share/backgrounds/rakuos/RakuOS-Chojiro.jpg",
   "terminalOverride": "ghostty",
-  "wallpaperPathLight": "/usr/share/backgrounds/rakuos/RakuOS-Glitch2.png",
-  "wallpaperPathDark": "/usr/share/backgrounds/rakuos/RakuOS-Glitch2.png",
+  "wallpaperPathLight": "/usr/share/backgrounds/rakuos/RakuOS-Chojiro.jpg",
+  "wallpaperPathDark": "/usr/share/backgrounds/rakuos/RakuOS-Chojiro.jpg",
   "wallpaperTransition": "iris bloom",
   "lastPlayerIdentity": "",
   "lastAppliedIconTheme": "Colloid-Dark",
