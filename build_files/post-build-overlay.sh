@@ -147,9 +147,6 @@ cat >> /usr/share/rakuos/protected-packages.txt << 'EOF'
   qt6ct-kde
   wl-mirror
   libnotify
-  blueman
-  gnome-keyring
-  gnome-keyring-pam
   xwayland-satellite
   NetworkManager-adsl
   NetworkManager-bluetooth

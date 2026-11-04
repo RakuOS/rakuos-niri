@@ -1,19 +1,21 @@
 #!/bin/bash
 
 FIRSTRUN="$HOME/.local/share/config-setup"
-OLDRUN="$HOME/.local/share/dotfiles-setup" # Fixme: Remove when sure everyone updated
+DMS_CONFIG="$HOME/.config/DankMaterialShell/settings.json"
+
+if [ -f "$DMS_CONFIG" ]; then
+    rm -r "$HOME/.config/dms/"
+    rm -r "$HOME/.local/state/dms/"
+    rm -r "$HOME/.cache/dms/"
+fi
 
 if [ -f "$FIRSTRUN" ]; then
     exit 0
 fi
 
-if [ -f "$OLDRUN" ]; then
-    rm "$OLDRUN"
-else
-    cp -r "/etc/skel/." "$HOME"
-    gsettings set org.gnome.desktop.interface icon-theme "Colloid-Dark"
-    dms restart
-fi
+cp -r "/etc/skel/." "$HOME"
+gsettings set org.gnome.desktop.interface icon-theme "Colloid-Dark"
+dms restart
 
 # Fixme: Temporary replace ibus
 ENV_LINE='export GTK_IM_MODULE="simple"'

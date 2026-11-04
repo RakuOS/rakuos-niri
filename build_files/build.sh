@@ -12,6 +12,21 @@ if [ "${RAKUOS_STAGING:-0}" = "1" ]; then
     RAKUOS_RELEASE_PKG="rakuos-release-niri-staging"
 fi
 
+# Same for RakuOS System: staging images install its -staging build (from
+# rakuos-system's staging branch), which provides the stable name.
+RAKUOS_SYSTEM_PKG="rakuos-system-gtk"
+if [ "${RAKUOS_STAGING:-0}" = "1" ]; then
+    RAKUOS_SYSTEM_PKG="rakuos-system-staging-gtk"
+fi
+
+# And for the Software Center and the Welcome app.
+RAKUOS_SOFTWARE_PKG="rakuos-software-gtk"
+RAKUOS_WELCOME_PKG="rakuos-welcome-gtk"
+if [ "${RAKUOS_STAGING:-0}" = "1" ]; then
+    RAKUOS_SOFTWARE_PKG="rakuos-software-staging-gtk"
+    RAKUOS_WELCOME_PKG="rakuos-welcome-staging-gtk"
+fi
+
 # Terra ships disabled by default (third-party repos are opt-in), so enable
 # it here in case any packages below come from Terra; post-build.sh disables
 # it again before the image is finalized.
@@ -57,9 +72,6 @@ rum install -y --skip-broken --skip-unavailable \
   qt6ct-kde \
   wl-mirror \
   libnotify \
-  blueman \
-  gnome-keyring \
-  gnome-keyring-pam \
   xwayland-satellite \
   NetworkManager-adsl \
   NetworkManager-bluetooth \
@@ -71,9 +83,10 @@ rum install -y --skip-broken --skip-unavailable \
   ghostty-nautilus \
   ghostty-kio \
   ${RAKUOS_RELEASE_PKG} \
-  rakuos-software-gtk \
-  rakuos-system-gtk \
-  rakuos-welcome-gtk \
+  ${RAKUOS_SOFTWARE_PKG} \
+  ${RAKUOS_SYSTEM_PKG} \
+  ${RAKUOS_WELCOME_PKG} \
+  rakuos-shell-picker \
   systemd-oomd-defaults \
   wireplumber \
   xdg-desktop-portal \
@@ -94,9 +107,6 @@ sed -i \
   -e '/org\.gnome\.Rhythmbox3\.desktop/d' \
   -e 's|application/pdf=org\.gnome\.Evince\.desktop|application/pdf=org.mozilla.firefox.desktop|g' \
   /usr/share/applications/mimeapps.list
-
-## Unlock keyring on login
-sed -i -E 's/^-([a-z]+[[:space:]]+.*pam_gnome_keyring\.so)/\1/' /etc/pam.d/greetd
 
 ## Enable Services
 systemctl enable greetd
