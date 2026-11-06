@@ -4,6 +4,8 @@ FIRSTRUN="$HOME/.local/share/config-setup"
 DMS_CONFIG="$HOME/.config/DankMaterialShell/settings.json"
 
 if [ -f "$DMS_CONFIG" ]; then
+    mkdir "$HOME/backup/"
+    cp -r "$HOME/.config/DankMaterialShell/" "$HOME/backup/"
     rm -r "$HOME/.config/dms/"
     rm -r "$HOME/.local/state/dms/"
     rm -r "$HOME/.cache/dms/"
