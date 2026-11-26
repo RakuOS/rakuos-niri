@@ -36,7 +36,6 @@ rum config-manager --default --set-enabled terra
 rum config-manager --default --set-enabled $(cat /usr/share/rakuos/rpmfusion-default-repos)
 
 ## Install packages
-# FIXME: Remove quickshell-git when Fedora gets 0.3 version
 # ghostty-kio satisfies ghostty's rich Requires (`ghostty-kio = ... if
 # kf6-kio-core`); without it baked in now, any later kf6-kio-core install
 # (e.g. kde-partitionmanager) fails once Terra is disabled below.
@@ -67,7 +66,7 @@ rum install -y --skip-broken --skip-unavailable \
   cava \
   wl-clipboard \
   matugen \
-  quickshell-git \
+  quickshell \
   wtype \
   qt6ct-kde \
   wl-mirror \

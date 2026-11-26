@@ -384,7 +384,7 @@
   "notificationRules": [],
   "notificationFocusedMonitor": false,
   "osdAlwaysShowValue": false,
-  "osdPosition": 0,
+  "osdPosition": 7,
   "osdVolumeEnabled": true,
   "osdMediaVolumeEnabled": true,
   "osdMediaPlaybackEnabled": false,
@@ -565,7 +565,7 @@
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
-      "squareCorners": true,
+      "squareCorners": false,
       "noBackground": false,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
@@ -587,7 +587,13 @@
       "widgetOutlineColor": "surfaceText",
       "shadowIntensity": 0,
       "followInterfaceStyle": true,
-      "widgetFollowInterfaceStyle": true
+      "widgetFollowInterfaceStyle": true,
+      "widgetPadding": 7,
+      "attachToScreenEdge": false,
+      "island": false,
+      "dot": false,
+      "barLengthMode": "percent",
+      "barLengthPercent": 65
     }
   ],
   "desktopWidgetInstances": [],
@@ -614,7 +620,7 @@
   "frameScreenPreferences": [
     "all"
   ],
-  "frameBarSize": 40,
+  "frameBarSize": 36,
   "frameShowOnOverview": true,
   "frameBlurEnabled": false,
   "frameCloseGaps": true,
@@ -814,11 +820,12 @@
       "showOnLastDisplay": true,
       "position": 1,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 48,
-      "spacing": 8,
-      "itemSpacing": 4,
+      "spacing": 6,
+      "itemSpacing": 6,
       "margin": 0,
       "bottomGap": 0,
       "transparency": 1,
@@ -875,5 +882,19 @@
       ]
     }
   ],
-  "springBounce": 1
+  "springBounce": 1,
+  "dmsWindowsFloatingSeeded": [
+    "niri"
+  ],
+  "density": "compact",
+  "interfaceStyle": "expressive",
+  "floatingWindowTitleBars": false,
+  "osdPositionOverrides": {
+    "brightness": 6,
+    "idleInhibitor": 6,
+    "numLock": 4,
+    "touchpad": 4,
+    "powerProfile": 4,
+    "audioOutput": 4
+  }
 }
